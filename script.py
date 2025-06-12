@@ -174,7 +174,7 @@ async def schedule_daily_reminder(application):
     tz = pytz.timezone('Europe/Moscow')
     while True:
         now_dt = datetime.now(tz)
-        target_time = now_dt.replace(hour=23, minute=10, second=0, microsecond=0)
+        target_time = now_dt.replace(hour=23, minute=00, second=0, microsecond=0)
         if now_dt >= target_time:
             target_time += timedelta(days=1)
         wait_seconds = (target_time - now_dt).total_seconds()
